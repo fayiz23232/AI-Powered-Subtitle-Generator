@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Subtitle Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Subtitle Generator</h1>
+            <p>Upload a video to automatically generate subtitles using speech and vision analysis.</p>
+        </header>
+        <main>
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="video-input" name="video" accept="video/*" hidden>
+                <label for="video-input" id="upload-label">
+                    <span>Click to select a video file</span>
+                </label>
+                <p id="file-name"></p>
+            </div>
+            <button id="generate-btn" disabled>Generate Subtitles</button>
+            <div class="status-area" id="status-area">
+                <p id="status-text"></p>
+                <div class="loader" id="loader" style="display: none;"></div>
+            </div>
+            <div id="result-area" style="display: none;">
+                <h2>Subtitles Generated!</h2>
+                <a href="#" id="download-link" class="download-btn">Download .SRT File</a>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
